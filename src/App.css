@@ -1,38 +1,258 @@
-.App {
-  text-align: center;
+html {
+  --tmdbDarkBlue: 3, 37, 65;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body * {
+  box-sizing: border-box;
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
   display: flex;
   flex-direction: column;
+  min-height: 100%;
+  height: auto;
+  color: #000;
+  font-family: 'Source Sans Pro', Arial, sans-serif;
+  font-size: 1em;
+
+}
+
+div.page_wrap {
+  display: flex;
+  flex: 1 1 auto;
+  min-height: 100%;
+  height: auto;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(var(--tmdbDarkBlue), 1);
+  height: 64px;
+  width: 100%;
+  z-index: 10;
+}
+
+header div.content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+header div.sub_media {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  top: 0;
+  left: 0;
+  max-width: 1400px;
+  width: 100%;
+  padding: 0 40px;
+}
+
+header div.nav_wrapper {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  align-items: center;
+  overflow: visible;
+}
+
+header a.logo img {
+  display: block;
+  margin-right: 16px;
+  width: 154px;
+  height: 20px;
+}
+
+header a {
+  color: white;
+  font-weight: 600;
+}
+
+a {
+  text-decoration: none;
+}
+
+header ul.navigation.k-menu {
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.k-menu {
+  border-width: 0;
+  border-style: solid;
+  box-sizing: border-box;
+  outline: 0;
+  line-height: 1.5;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  position: relative;
+  cursor: default;
+
+}
+
+.k-reset {
+  text-decoration: none;
+}
+
+header ul {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+ul {
+  display: block;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+}
+
+header ul.navigation>li.k-item {
+  display: flex;
+}
+
+header ul.navigation>.k-item {
+  margin-right: 14px;
+}
+
+.k-menu-item {
+  border-width: 0;
+  outline: 0;
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+  display: flex;
+  flex: 0 0 auto;
+  position: relative;
+}
+
+header ul li a {
+  display: flex;
+  align-items: center;
+  align-content: center;
+}
+
+.k-menu-link {
+  padding: .5rem .5rem;
+  outline: 0;
+  color: inherit;
+  display: flex;
+  flex-direction: row;
+  flex: 1 1 auto;
+  align-items: center;
+  position: relative;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.k-link {
+  text-decoration: none;
+}
+
+header div.flex {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+}
+
+header div.flex.ul {
+  justify-content: flex-end;
+
+}
+
+header ul {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+header ul.primary li {
+  margin-left: 30px;
+}
+
+header ul li {
+  display: flex;
+  align-items: center;
+  align-content: center;
+}
+
+header ul li.glyph a {
+  height: 100%;
+  display: inline-flex;
+  align-items: center;
+}
+
+.glyphicons_v2.plus.white {
+  background-image: url(/src/media/logo2.svg);
+}
+
+.glyphicons_v2.plus {
+  background-image: url(/src//media/logo2.svg);
+}
+
+header ul li.glyph a span {
+  background-color: transparent;
+}
+
+.glyphicons_v2 {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  min-width: 1em;
+  min-height: 1em;
+  width: 1em;
+  height: 1em;
+  line-height: inherit;
+  background-position: center center;
+  background-repeat: no-repeat;
+  color: inherit;
+  box-sizing: border-box;
 }
 
-.App-link {
-  color: #61dafb;
+header ul.primary li.translate,
+header ul.primary li.user a {
+  display: block;
+  padding: 4px 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+header ul.primary li {
+  margin-left: 30px;
+}
+
+header ul li {
+  display: flex;
+  align-items: center;
+  align-content: center;
+}
+
+header ul li.translate div {
+  width: 28px;
+  height: 26px;
+  display: flex;
+  font-family: 'Courier New', Courier, monospace;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.glyphicons_v2.search.blue {
+  background-image: url(./media/search.svg);
 }
