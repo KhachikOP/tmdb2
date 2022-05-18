@@ -10,6 +10,9 @@ const Header = () => {
   const apiKey = process.env.REACT_APP_MOVIE_API_KEY;
   const [movies, setMovies] = useState([]);
 
+  function rotateImg() {
+    document.querySelector(".img").style.transform = "opacity: 0.5";
+  }
   const fetchMovies = async () => {
     const {
       data: { results },
@@ -213,36 +216,43 @@ const Header = () => {
                         <div className="name">
                           <h2>Sort</h2>
                           <span
-                            onClick={() => setShowResults(!showResults)}
-                            className="glyphicons_v2 chevron-right"
+                            onClick={() => {
+                              setShowResults(!showResults);
+                              rotateImg();
+                            }}
+                            className="img glyphicons_v2 chevron-right"
                           ></span>
                         </div>
-                       {showResults ? <div className="filter hidden">
-                          <h3>Sort Results By</h3>
-                          <select
-                            id="sort"
-                            onChange={(e) => setResult(e.target.value)}
-                          >
-                            <option value="popularityDesc">
-                              Popularity Descending
-                            </option>
-                            <option value="popularityAsc">
-                              Popularity Ascending
-                            </option>
-                            <option value="ratingDesc">
-                              Rating Descending
-                            </option>{" "}
-                            <option value="ratingAsc">Rating Ascending</option>
-                            <option value="releaseDesc">
-                              Release Date Descending
-                            </option>
-                            <option value="releaseAsc">
-                              Release Date Ascending
-                            </option>
-                            <option value="A-Z">Title A-Z</option>
-                            <option value="Z-A">Title A-Z</option>
-                          </select>
-                        </div> : null }
+                        {showResults ? (
+                          <div className="filter hidden">
+                            <h3>Sort Results By</h3>
+                            <select
+                              id="sort"
+                              onChange={(e) => setResult(e.target.value)}
+                            >
+                              <option value="popularityDesc">
+                                Popularity Descending
+                              </option>
+                              <option value="popularityAsc">
+                                Popularity Ascending
+                              </option>
+                              <option value="ratingDesc">
+                                Rating Descending
+                              </option>{" "}
+                              <option value="ratingAsc">
+                                Rating Ascending
+                              </option>
+                              <option value="releaseDesc">
+                                Release Date Descending
+                              </option>
+                              <option value="releaseAsc">
+                                Release Date Ascending
+                              </option>
+                              <option value="A-Z">Title A-Z</option>
+                              <option value="Z-A">Title A-Z</option>
+                            </select>
+                          </div>
+                        ) : null}
                       </div>
                       <div className="apply small background_color light_blue disabled ">
                         <div className="loading_wrapper hide">
