@@ -9,15 +9,6 @@ import {
   Rate,
 } from "./circle.styles";
 
-/**
- * Render progress circle element.
- *
- * @param {Object} props The component props.
- * @param {Number} rate  The progress Rate.
- * @param {Number} fill  The fill percentage.
- *
- * @return {JSX.element}
- */
 function Circle({ rate, fill }) {
   return (
     <Container>

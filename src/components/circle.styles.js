@@ -15,7 +15,6 @@ export const Container = styled.div`
     left: 0.625rem;
     top: -1.5rem;
     width: 2.5rem;
-    z-index: 50;
   }
 `;
 
@@ -25,6 +24,8 @@ export const SvgCircle = styled.svg`
   height: 2.5rem;
   transform-origin: center;
   transform: rotate(270deg);
+
+}
 `;
 
 export const FirstCircle = styled.circle`
