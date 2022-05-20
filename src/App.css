@@ -1,0 +1,667 @@
+html {
+  height: 100%;
+  --tmdbDarkBlue: 3, 37, 65;
+  ---numberOfDiscoverColumns: 3;
+  --discoverColumnPadding: 30px;
+  ---numberOfPosterColumns: 1;
+  ---numberOfBackdropColumns: 1;
+  --imageColumnPadding: 30px;
+  --imageBorderRadius: 8px;
+  --maxPrimaryPageWidth: 1400px;
+
+}
+
+body {
+  
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  box-sizing: border-box;
+  height: auto;
+  color: #000;
+  font-family: 'Source Sans Pro', Arial, sans-serif;
+  font-size: 1em;
+  margin: 0;
+
+}
+
+div.page_wrap {
+  display: flex;
+  flex: 1 1 auto;
+  min-height: 100%;
+  height: auto;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(var(--tmdbDarkBlue), 1);
+  height: 64px;
+  width: 100%;
+  z-index: 10;
+}
+
+header div.content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+header div.sub_media {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  top: 0;
+  left: 0;
+  max-width: 1400px;
+  width: 100%;
+  padding: 0 40px;
+}
+
+header div.nav_wrapper {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  align-items: center;
+  overflow: visible;
+}
+
+header a.logo img {
+  display: block;
+  margin-right: 16px;
+  width: 154px;
+  height: 20px;
+}
+
+header a {
+  color: white;
+  font-weight: 600;
+}
+
+a {
+  text-decoration: none;
+}
+
+.k-menu-item {
+  border-width: 0;
+  outline: 0;
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+  display: flex;
+  flex: 0 0 auto;
+  position: relative;
+}
+
+
+.k-menu-link {
+  padding: .5rem .5rem;
+  outline: 0;
+  color: inherit;
+  display: flex;
+  flex-direction: row;
+  flex: 1 1 auto;
+  align-items: center;
+  position: relative;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+header ul {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+
+
+.glyphicons_v2.plus.white {
+  background-image: url(/src/media/logo2.svg);
+}
+
+.glyphicons_v2.plus {
+  background-image: url(/src//media/logo2.svg);
+}
+
+
+
+.glyphicons_v2 {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1em;
+  min-height: 1em;
+  width: 1em;
+  height: 1em;
+  line-height: inherit;
+  background-position: center center;
+  background-repeat: no-repeat;
+  color: inherit;
+  box-sizing: border-box;
+}
+
+header ul.primary li.translate,
+header ul.primary li.user a {
+  display: block;
+  padding: 4px 0;
+}
+
+header ul.primary li {
+  margin-left: 30px;
+}
+
+header ul li {
+  display: flex;
+  align-items: center;
+  align-content: center;
+}
+
+header ul li.translate div {
+  width: 28px;
+  height: 26px;
+  display: flex;
+  font-family: 'Courier New', Courier, monospace;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.glyphicons_v2.search.blue {
+  background-image: url(./media/search.svg);
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: center;
+  background-color: white;
+  margin-top: 64px;
+}
+
+section.inner_content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: flex-start;
+  width: 100%;
+  box-sizing: border-box;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+div.media {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+
+div.media.discover div.content_wrapper {
+  flex-wrap: wrap;
+}
+
+div.column_wrapper {
+  display: flex;
+  align-items: flex-start;
+}
+
+div.column_wrapper div.content_wrapper {
+  max-width: 1400px;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  align-content: flex-start;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+div.media.discover div.content_wrapper>div.title {
+  width: 100%;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+section.inner_content div.title {
+  width: 100%;
+}
+
+section.inner_content div.title h2 {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  
+}
+
+div.media.discover div.content_wrapper div.content {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+
+div.media.discover div.filter_panel {
+  min-width: 260px;
+  width: 260px;
+  border: 0px solid gray;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.card {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background-color: whitesmoke;
+}
+
+div.media.discover div.filter_panel div.name {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  align-items: center;
+  padding: 14px 16px;
+}
+
+div.media.discover div.filter_panel div.name h2 {
+  font-size: 1.1em;
+}
+
+div.media.discover div.filter_panel h2 div.media.discover div.filter_panel h3 {
+  margin: 0;
+  padding: 0;
+}
+
+div.media.discover div.filter_panel div.name span.chevron-right {
+  transform: rotate(90deg);
+ 
+}
+
+
+.glyphicons_v2.chevron-right {
+  background-image: url(/src/media/rotate.svg); 
+}
+
+div.media.discover div.filter_panel div.filter {
+  width: 100%;
+  border-top: 1px solid #eee;
+  padding: 14px 16px 16px 16px;
+}
+
+div.media.discover div.filter_panel div.filter h3 {
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+  font-size: 1em;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+#sort {
+  width: 100%;
+  border: 0ch;
+  background-color: #eee;
+
+}
+
+div.media.discover div.apply {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  border-radius: 20px;
+  height: 44px;
+}
+
+.background_color.light_blue {
+  background-color: #01b4e4;
+}
+
+.ball-scale-multiple {
+  position: relative;
+  transform: translateY(-20px);
+}
+
+div.media.discover div.apply p {
+  display: inline-flex;
+  align-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+div.media.discover div.apply a {
+  color: #fff;
+  font-size: 1.2em;
+  line-height: 1;
+  font-weight: 600;
+  width: 100%;
+  height: 100%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+div.media.discover div.white_column {
+  padding-left: 30px;
+  background: transparent;
+}
+
+div.white_column.no_pad,
+div.reverse div.white_column.no_pad {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.no_pad {
+  padding: 0;
+}
+
+section.panel:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+
+section.panel {
+  width: 100%;
+  display: block;
+  padding: 30px 0;
+}
+
+div.media.discover div.results {
+  margin-top: -30px;
+}
+
+div.page_wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+
+div.media.discover div.card.style_1 {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  border: 1px solid #e3e3e3;
+  border-radius: var(--imageBorderRadius);
+  overflow: hidden;
+  margin-top: 30px;
+  width: calc((100vw - 80px - 260px - (var(--discoverColumnPadding) * var(--numberOfDiscoverColumns))) / var(--numberOfDiscoverColumns));
+  max-width: calc((var(--maxPrimaryPageWidth) - 80px - 260px - (var(--discoverColumnPadding) * var(--numberOfDiscoverColumns))) / var(--numberOfDiscoverColumns));
+  height: 390px;
+}
+
+div.media.discover div.card.style_1 div.content {
+  width: 100%;
+  padding: 26px 10px 12px 10px;
+  position: relative;
+  white-space: normal;
+  display: flex;
+  align-content: flex-start;
+  flex-wrap: wrap;
+}
+
+div.media.discover div.card.style_1 div.content h2 {
+  font-size: 1em;
+  margin: 0;
+  width: 100%;
+  word-wrap: normal;
+  overflow-wrap: break-word;
+}
+
+div.media.discover div.card.style_1 div.content p {
+  font-size: 1em;
+  margin: 0;
+  padding: 0;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+
+div.media.discover div.card.style_1 div.image {
+  width: 100%;
+  height: calc((100vw - 80px - 260px - (var(--discoverColumnPadding) * var(--numberOfDiscoverColumns))) / var(--numberOfDiscoverColumns) * 1.5);
+  max-height: calc((var(--maxPrimaryPageWidth) - 80px - 260px - (var(--discoverColumnPadding) * var(--numberOfDiscoverColumns))) / var(--numberOfDiscoverColumns) * 1.5);
+}
+
+
+div.media.discover div.card.style_1 div.image div.wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+div.media.discover div.card.style_1 div.image div.wrapper a.image {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+div.media.discover a {
+  color: black;
+}
+
+div.media.discover div.card.style_1 div.image img {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  
+}
+
+.container img {
+  width: 200px;
+  height: 273px;
+  border-radius: 10px;
+}
+
+.date {
+  font-size: 1em;
+  margin: 0;
+  padding: 0;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+
+div.media.discover div.card.style_1 div.content {
+  width: 100%;
+  padding: 26px 10px 12px 10px;
+  position: relative;
+  white-space: normal;
+  display: flex;
+  align-content: flex-start;
+  flex-wrap: wrap;
+}
+
+div.media.discover div.card.style_1 div.content h2 {
+  font-size: 1em;
+  margin: 0;
+  width: 100%;
+  word-wrap: normal;
+  overflow-wrap: break-word;
+}
+
+div.media.discover div.card.style_1 div.content p {
+  font-size: 1em;
+  margin: 0;
+  padding: 0;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+div.media.discover div.card.style_1 div.content div.consensus {
+  position: absolute;
+  top: -21px;
+  left: 10px;
+}
+
+div.consensus.tight {
+  width: 38px;
+  height: 38px;
+  box-sizing: border-box;
+}
+
+div.consensus {
+  width: 68px;
+  height: 68px;
+  display: inline-block;
+  
+}
+
+div.card div.consensus.tight div.outer_ring {
+  width: 38px;
+  height: 38px;
+  padding: 2px;
+}
+
+div.media.discover div.card div.consensus div.outer_ring{
+  margin-right: 0;
+}
+
+div.consensus div.outer_ring {
+  display: inline-block;
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  padding: 4px;
+  background-color: #081c22;
+}
+div.consensus .user_score_chart {
+  position:relative;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+div.consensus .user_score_chart .percent {
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+div.card div.consensus.tight .user_score_chart .percent .icon {
+  padding-top: 1px;
+  padding-left: 1px;
+  font-size: 1em;
+}
+
+div.consensus .user_score_chart .percent .icon {
+  color: white;
+ 
+}
+
+footer {
+  max-width: 100%;
+  width: 100vw;
+  box-sizing: border-box;
+  padding: 0;
+  background-image: radial-gradient(at 30% top, #031d33 0%, rgba(var(--tmdbDarkBlue), 1) 70%);
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: space-between;
+  justify-content: center;
+}
+
+footer nav {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  font-size: 12px;
+  margin: 0;
+}
+footer.nav div.join {
+  text-align: right;
+  position: relative;
+  top: -36px;
+  right: 0;
+}
+
+ footer nav div {
+  margin-right: 40px;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+
+footer nav a {
+  color: white;
+}
+
+footer nav h3 {
+  font-weight: bold;
+  font-size: 1.4em;
+  line-height: 1.4em;
+  text-transform: uppercase;
+  color: #fff;
+  white-space: nowrap;
+}
+
+h3 {
+  margin: 0 0 4px 0;
+}
+
+ul {
+  list-style-type: none;
+}
+
+footer nav ul li {
+  line-height: 1.6em;
+  max-width: 260px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #fff;
+} 
+
+
+/* @media (max-width: 1550px) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+} */
